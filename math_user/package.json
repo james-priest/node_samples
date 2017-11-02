@@ -1,0 +1,12 @@
+{
+  "name": "math_user",
+  "version": "0.0.0",
+  "description": "test - this is a user of math_example package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Priest",
+  "license": "MIT",
+  "dependencies": {}
+}
