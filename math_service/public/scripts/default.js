@@ -46,7 +46,7 @@ function addNumbers$ajax_HTTP_GET(e) {
 
     $.ajax( {
         url: '/addition',
-        data: ajaxData(),   // { 'x': x, 'y': y }
+        data: formatAjaxData(),   // { 'x': x, 'y': y }
         type: 'GET',
         cache: false,
         dataType: 'json',
