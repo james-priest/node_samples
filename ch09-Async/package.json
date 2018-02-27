@@ -1,0 +1,14 @@
+{
+  "name": "ch09-async",
+  "version": "1.0.0",
+  "description": "Sample code from Ch09 of ms cert book",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Priest",
+  "license": "ISC",
+  "devDependencies": {
+    "jquery": "^3.3.1"
+  }
+}
