@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video Prototype</title>
+    <link href="media/default.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="container">
+        <video id="media" controls="controls">
+            <source src="media/eagle.webm" type='video/webm; codecs="vorbis, vp8"' />
+            <source src="media/eagle.ogv" type='video/ogg; codecs="theora, vorbis"' />
+            <source src="media/eagle.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <track id="englishtrack" kind="subtitles" src="media/captions.vtt" srclang="en" label="English" default />
+            You need an HTML5 compatible browser.
+        </video>
+        <br><br>
+        <button type="button" id="play">Play</button><br>
+        <span id="message"></span>
+    </div>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="media/default.js"></script>
+</body>
+</html>
