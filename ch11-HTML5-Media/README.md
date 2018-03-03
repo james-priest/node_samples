@@ -283,6 +283,8 @@ In addition to the methods and properties of `HTMLMediaElement`, the following i
 ## 20. Controlling the media
 Given that HTMLMediaElement has many methods, properties, and events, you can provide custom controls for the media and a custom means to start and stop playback.
 
+[![11-2](images/sm_chap11-2.jpg)](images/full-size/chap11-2.png)
+
 The following is an example of using the methods, properties, and events. Consider the following HTML document.
 
 ```html
