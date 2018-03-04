@@ -115,7 +115,7 @@ In this example, `canvas` is a reference to the `<canvas>` element whose `id` is
 
 The coordinates of the drawing surface are represented as `x`, `y` where 0,0 is the upper-left corner of the canvas
 
-[![12-1](assets/images/sm_chap12-1.jpg)](assets/images/full-size/chap12-1.png)
+[![12-1](assets/images/sm_chap12-1.jpg)](assets/images/full-size/chap12-1.png)<br>
 **Example:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/a-canvas1.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/a-canvas1.html</a>
 
 ### Quick check
@@ -163,7 +163,7 @@ function drawSomething() {
 
 In this example, the `fillRect()` method is used to create four rectangles. Each is spaced horizontally by the offset amount. Next the `clearRect()` method is used to clear a rectangular area that is inside the filled-in area. Finally, the `strokeRect()` method is used to create a second row, but these rectangles are not filled in.
 
-[![12-2](assets/images/sm_chap12-2.jpg)](assets/images/full-size/chap12-1.png)
+[![12-2](assets/images/sm_chap12-2.jpg)](assets/images/full-size/chap12-1.png)<br>
 **Example:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/b-rect1.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/b-rect1.html</a>
 
 So, drawing on the canvas does indeed require knowledge of JavaScript and the canvas context object.
@@ -208,7 +208,7 @@ function drawUsingCssColor() {
 
 In this example, `fillStyle` is set to "red" and two rectangles are created. Next, `fillStyle` is set to green, using "#00FF00" and two rectangles are created. Finally, `fillStyle` is set to blue with an opacity of 25 percent and two rectangles are created.
 
-[![12-3](assets/images/sm_chap12-3.jpg)](assets/images/full-size/chap12-3.png)
+[![12-3](assets/images/sm_chap12-3.jpg)](assets/images/full-size/chap12-3.png)<br>
 **Example:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/c-fillStyle1.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/c-fillStyle1.html</a>
 
 ## 9. fillstyle: Gradient
@@ -282,7 +282,7 @@ function addColorStops(gradient) {
 
 This example code displays two rectangles for each test, in which the second rectangle is offset from the first rectangle, so you can see how the gradient is rendered relative to the canvas, not the rectangle.
 
-[![12-4](assets/images/sm_chap12-4.jpg)](assets/images/full-size/chap12-4.png)
+[![12-4](assets/images/sm_chap12-4.jpg)](assets/images/full-size/chap12-4.png)<br>
 **Example:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/c-fillStyle2.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/c-fillStyle2.html</a>
 
 The first pair of rectangles demonstrates a horizontal linear gradient when y0 and y1 are equal.
@@ -325,7 +325,7 @@ function drawPattern() {
 
 In this example, instead of creating an `<img>` element, the image is dynamically created and its source is set to the shapes.png file. Next, the `onload` event of the image is subscribed to that creates the pattern on the canvas after shapes.png is loaded.
 
-[![12-5](assets/images/sm_chap12-5.jpg)](assets/images/full-size/chap12-4.png)
+[![12-5](assets/images/sm_chap12-5.jpg)](assets/images/full-size/chap12-4.png)<br>
 **Example:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/c-fillStyle3.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/c-fillStyle3.html</a>
 
 ## 11. Setting lineWidth
@@ -359,6 +359,6 @@ function drawPattern() {
 
 In this example, `lineWidth` is changed on each iteration of the `for` loop; the drawn rectangle starts small and gets larger with each iteration.
 
-[![12-6](assets/images/sm_chap12-6.jpg)](assets/images/full-size/chap12-6.png)
+[![12-6](assets/images/sm_chap12-6.jpg)](assets/images/full-size/chap12-6.png)<br>
 **Example:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/d-lineWidth1.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/d-lineWidth1.html</a>
 -->
