@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    drawPattern();
+    drawLineWidth();
 });
 
-function drawPattern() {
+function drawLineWidth() {
     // var canvas = document.getElementById('myCanvas');
     var canvas = document.createElement('canvas'),
         ctx = canvas.getContext('2d'),
