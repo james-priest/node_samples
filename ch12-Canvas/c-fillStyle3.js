@@ -14,7 +14,7 @@ function drawPattern() {
 
     // create new image object to use as pattern
     var img = new Image();
-    img.src = "assets/images/shapes.png";
+    img.src = "assets/images/full-size/shapes.png";
     img.onload = function() {
         // create pattern
         var ptrn = ctx.createPattern(img, 'repeat');
