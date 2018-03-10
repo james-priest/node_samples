@@ -1,0 +1,18 @@
+body { font-family: Arial, Helvetica, sans-serif; }
+#target {
+    border: solid;
+    width: 500px;
+    height: 150px;
+    background-color: gold;
+    text-align: center;
+}
+#fileInfo {
+    width: 500px;
+}
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #333;
+}
+th, td {
+    padding: 5px;
+}

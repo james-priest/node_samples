@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cars 1</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; }
+        #favoriteCars { min-height:100px; background-color:gold; }
+        #favoriteCars:-moz-drag-over { border: 1px solid black; }
+    </style>
+</head>
+<body>
+    <p>What cars do you like?</p>
+    <ul id="carList">
+        <li draggable="true" data-value="car,Chevrolet">Chevrolet</li>
+        <li draggable="true" data-value="car,Ford">Ford</li>
+        <li draggable="true" data-value="car,BMW">BMW</li>
+    </ul>
+    <p>Drop your favorite cars below:</p>
+    <ol id="favoriteCars"></ol>
+
+    <!-- <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" 
+    crossorigin="anonymous"></script>
+    <script src="b-cars1.js"></script>
+</body>
+</html>
