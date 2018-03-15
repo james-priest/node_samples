@@ -38,18 +38,17 @@ function showPosition(position) {
     var lat2 = position.coords.latitude,
         lon2 = position.coords.longitude;
     
+    showMessage('Latitude: ' + lat2 + '<br>' +
+        'Longitude: ' +lon2 + '<br>' +
+        'Timestamp: ' + dateTime);
+    
     if (firstCall) {
         lat1 = lat2;
         lon1 = lon2;
         firstCall = false;
     }
-    showMessage('Latitude: ' + lat2 + '<br>' +
-        'Longitude: ' +lon2 + '<br>' +
-        'Timestamp: ' + dateTime);
     var dist = getDistance(lat1, lon1, lat2, lon2);
-    $('#distance').html(dist);
-    lat2 = lat1;
-    lon2 = lon1;
+    $('#distance').html(dist.toFixed(3));
 }
 
 function showError(error) {
