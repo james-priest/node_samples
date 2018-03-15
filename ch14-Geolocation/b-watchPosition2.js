@@ -1,7 +1,7 @@
 var watchId = 0,
+    firstCall = true,
     lat1 = 0,
-    lon1 = 0,
-    firstCall = true;
+    lon1 = 0;
 
 $(document).ready(function() {
     $('#startMonitoring').on('click', getLocation);
@@ -37,11 +37,11 @@ function showPosition(position) {
     var dateTime = new Date(position.timestamp).toLocaleString();
     var lat2 = position.coords.latitude,
         lon2 = position.coords.longitude;
-    
+
     showMessage('Latitude: ' + lat2 + '<br>' +
         'Longitude: ' +lon2 + '<br>' +
         'Timestamp: ' + dateTime);
-    
+
     if (firstCall) {
         lat1 = lat2;
         lon1 = lon2;
