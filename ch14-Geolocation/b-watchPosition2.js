@@ -1,6 +1,7 @@
 var watchId = 0,
-    lat2 = 0,
-    lon2 = 0;
+    lat1 = 0,
+    lon1 = 0,
+    firstCall = true;
 
 $(document).ready(function() {
     $('#startMonitoring').on('click', getLocation);
@@ -25,7 +26,7 @@ function getLocation() {
 }
 
 function endWatch() {
-    if (watchId != 0) {
+    if (watchId !== 0) {
         navigator.geolocation.clearWatch(watchId);
         watchId = 0;
         showMessage("Monitoring ended.");
@@ -33,14 +34,18 @@ function endWatch() {
 }
 
 function showPosition(position) {
-    var datetime = new Date(position.timestamp).toLocaleString();
-    var lat1 = position.coords.latitude,
-        lon1 = position.coords.longitude;
-    showMessage('Latitude: ' + lat1 + '<br>' +
-        'Longitude: ' +lon1 + '<br>' +
-        'Timestamp: ' + datetime);
-    lat2 = lat2 === 0 ? lat1 : lat2;
-    lon2 = lon2 === 0 ? lon1 : lon2;
+    var dateTime = new Date(position.timestamp).toLocaleString();
+    var lat2 = position.coords.latitude,
+        lon2 = position.coords.longitude;
+    
+    if (firstCall) {
+        lat1 = lat2;
+        lon1 = lon2;
+        firstCall = false;
+    }
+    showMessage('Latitude: ' + lat2 + '<br>' +
+        'Longitude: ' +lon2 + '<br>' +
+        'Timestamp: ' + dateTime);
     var dist = getDistance(lat1, lon1, lat2, lon2);
     $('#distance').html(dist);
     lat2 = lat1;
