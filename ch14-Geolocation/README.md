@@ -551,7 +551,7 @@ The HTML has a reference to both jQuery and Google Maps API as follows:
     <div id="map"></div>
 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZVrQLO7kT6BhZXWlmtNDNkgI1bOJfk9M&callback=initMap"></script>
+    src="https://maps.googleapis.com/maps/api/js?key=<YOUR_API_KEY>&callback=initMap"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
