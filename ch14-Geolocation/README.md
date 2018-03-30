@@ -1,7 +1,3 @@
----
-title: HTML5 Geolocation
-description: Programming in HTML5 with JavaScript & CSS3 Training Guide
----
 <!-- markdownlint-disable MD022 MD024 MD032 -->
 # Chapter 14 - Geolocation
 
