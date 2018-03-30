@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cookie</title>
+    <link rel="stylesheet" href="cookie-style.css">    
+</head>
+<body>
+    <h1>Functions in global namespace</h1>
+    <pre><code id="code1"></code></pre>
+    
+    <hr>
+    <h2>Result</h2>
+    <div id="output"></div>
+    
+    <script src="a-cookie.js" id="js1"></script>
+    <script>
+        // v1 - ES5
+        // fetch('a-cookie.js').then(function(response) {
+        //     return response.text();
+        // }).then(function(text) {
+        //     console.log(text);
+        // });
+        
+        // v2 - ES5 condensed
+        // fetch('a-cookie.js').then(function(response) {
+        //     return response.text().then(function(text) {
+        //         console.log(text);
+        //     });
+        // });
+
+        // v3 - ES6
+        // fetch('a-cookie.js')
+        //     .then(response => response.text())
+        //     .then(text => console.log(text));
+        
+        // v4 - ES6 output to page
+        fetch('a-cookie.js')
+            .then(response => response.text())
+            .then(text => document.getElementById('code1').innerHTML = text.replace(/</g, '&lt;').replace(/>/g, '&gt;'));       
+    </script>
+</body>
+</html>
