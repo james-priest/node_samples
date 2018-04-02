@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cookie Index</title>
+    <link rel="stylesheet" href="cookie-style.css">    
+</head>
+<body>
+    <h1>Cookie code samples</h1>
+    <p>This code consists of two functions to manipulate cookies; a <code>setCookie()</code> and a <code>getCookie()</code> function.</p>
+    <pre><code>
+function setCookie(cookieName, cookieValue, expirationDays) {
+    var expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + expirationDays);
+    cookieValue = cookieValue + '; expires=' + expirationDate.toUTCString();
+    document.cookie = cookieName + '=' + cookieValue;
+}
+
+function getCookie(cookieName) {
+    var cookies = document.cookie.split(';');
+
+    for (let cookie of cookies) {
+        let index = cookie.indexOf('=');
+        let key = cookie.substr(0, index);
+        let val = cookie.substr(index + 1);
+
+        if (key.trim() === cookieName) { return val; }
+    }
+}
+    </code></pre>
+    <ul>
+        <li>Original code - <a href="a-cookie-original.html">a-cookie-original.html</a></li>
+    </ul>
+    <h2>Index of namespace patterns</h2>
+    <p>The original code pollutes the global namespace so here are examples of the same two cookie functions wrapped in different namespace patterns for organization, reuse, and encapsulation</p>
+    <ol>
+        <li>Single global variable - <a href="a-cookie1-global-var.html">a-cookie1-global-var.html</a></li>
+        <li>Object literal notation - <a href="a-cookie2-literal-notation.html">a-cookie2-literal-notation.html</a></li>
+        <li>Nested namespace pattern - <a href="a-cookie3-nested-namespace.html">a-cookie3-nested-namespace.html</a></li>
+        <li>Immediately Invoked Function Expression (IIFE) - <a href="a-cookie4-iife-wrapped.html">a-cookie4-iife-wrapped.html</a></li>
+    </ol>
+</body>
+</html>
