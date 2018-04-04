@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sessionStorage</title>
+    <link rel="stylesheet" href="cookie-style.css">    
+</head>
+<body>
+    <a href="b-index.html" class="nav"><-- Storage code samples</a>
+    <h1>Session Storage</h1>
+    <p>Hit Ctrl+Shift+I to open the Developer tools and see the data being set.</p>
+    <img src="assets/images/sm_chap15-4.jpg" alt="">
+
+    <h2>Session Storage</h2>
+    <p>Both Local Storage & Session Storage are recorded as key/value pairs. Both have a 5MB limit according to the spec.</p>
+    <fieldset>
+        <label for="txtKey">Key: </label><input type="text" name="txtKey" id="txtKey" placeholder="Enter a key" value="firstName"><br>
+        <label for="txtVal">Value: </label><input type="text" name="txtVal" id="txtVal" placeholder="Enter a value" value="James"><br><br>
+        <button id="btnSetSession">set sessionStorage</button>
+        <button id="btnGetSession">get sessionStorage</button>
+        <button id="btnClearSession">clear sessionStorage</button>
+    </fieldset>
+    <hr>
+    <h2>Result</h2>
+    <div id="output"></div>
+    
+    <script src="b-sessionStorage1.js" id="js1"></script>
+</body>
+</html>

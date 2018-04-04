@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(() => {
+        "use strict";
+
+        let timer; // value of Interval Countdown
+        let task; // Task to be done
+        let isCountdown = false; // Check if timer is on
+
+        /* Process of Countdown */
+        function countdownTimer(minutes, seconds) {
+            let breakTime = $("#breakTime").text();
+            let sessionTime = $("#sessionTime").text();
+            let isBreak = false;
+
+            // Countdown with time interval of 1 second
+            timer = setInterval(function () {
+                // If 1 minute has passed
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                }
+
+                // Change to Break Time
+                if (minutes <= 0 && seconds <= 0 && !isBreak) {
+                    isBreak = true;
+                    minutes = parseInt(breakTime);
+
+                    $(".task").text("BREAK");
+                }
+                // Change to SEssion Time
+                else if (minutes <= 0 && seconds <= 0 && isBreak) {
+                    isBreak = false;
+                    minutes = parseInt(sessionTime);
+
+                    $(".task").text(task.toUpperCase());
+                }
+
+                // Updating the Countdown Time in the App
+                if (seconds <= 9 && minutes <= 9)
+                    $(".countdown").html("0" + minutes + ":0" + seconds-- + "<hr>");
+                else if (minutes <= 9 && seconds > 9)
+                    $(".countdown").html("0" + minutes + ":" + seconds-- + "<hr>");
+                else if (minutes > 9 && seconds <= 9)
+                    $(".countdown").html(minutes + ":0" + seconds-- + "<hr>");
+                else
+                    $(".countdown").html(minutes + ":" + seconds-- + "<hr>");
+
+            }, 1000, minutes, seconds);
+        }
+    });
+    </script>
+</body>
+</html>

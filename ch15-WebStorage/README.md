@@ -498,3 +498,42 @@ For PWAs, you can cache static resources, composing your application shell (JS/C
 - **Web SQL** does not have broad browser support and its use is not recommended.
 - The **File System API** is not supported on any browser besides Chrome.
 - The **File API** is being improved in the File and Directory Entries API and File API specs but neither is sufficiently mature or standardized to encourage widespread adoption yet.
+
+## 13. Lesson summary
+
+- Web storage provides you with an easy method for storing key/value pairs of data without relying on a server.
+- With nearly universal support across current desktop and mobil browsers, web storage is the most supported form of offline data storage.
+- Web storage comes in two forms, which have the same methods.
+  - **localStorage** Shares data across all windows and tabs within the same origin.
+  - **sessionStorage** Data is sandboxed to only the current tab or window and is cleared when closed.
+- Reads/writes to web storage can be performed only synchronously
+- Only storage for string values is currently supported within web storage, but storage for more complex objects can be achieved by using the `JSON.stringify()` and `JSON.parse()` utility methods.
+
+## 14. Lesson review
+
+1. Which of the following URLs can access data stored on *http://www.example.com/lesson1/page1.html*?
+    - [ ] *http://www2.example.com/lesson1/page1.html*
+    - [ ] *http://www.example.com:8081/lesson1/page1.html*
+    - [ ] *https://www.example.com/lesson1/page1.html*
+    - [x] *http://www.example.com/lesson2/page1.html*
+    - [ ] *http://example.com/lesson1/page1.html*
+2. What is the web storage currently recommended by the W3C?
+    - [ ] 4 KB
+    - [x] 5 MB
+    - [ ] 500 MB
+    - [ ] 109 MB
+3. What is the correct syntax for removing all values existing in `localStorage()`?
+    - [x] `localStorage.clear();`
+    - [ ] `localStorage.removeAll();`
+    - [ ] `localStorage.abandon();`
+    - [ ] `localStorage.reset()`
+4. Which of the following storage mechanisms has the highest level of crsos-browser support?
+    - [x] Web storage
+    - [ ] Web SQL
+    - [ ] IndexedDB
+    - [ ] FileSystem API
+5. Which of the following features does web storage support?
+    - [ ] Indexing
+    - [ ] Transactions
+    - [ ] Asynchronous read/write
+    - [x] Simple key/value pair storage
