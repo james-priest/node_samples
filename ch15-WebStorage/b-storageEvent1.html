@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>StorageEvent</title>
+    <link rel="stylesheet" href="cookie-style.css">    
+</head>
+<body>
+    <a href="b-index.html" class="nav"><-- Storage code samples</a>
+    <h1>Storage Events</h1>
+    <p>The storage event will broadcast to any tabs and windows which are open to the same page that a change to the data has occurred. The StorageEvent object has the following properties:</p>
+    <ol>
+        <li>key</li>
+        <li>oldValue</li>
+        <li>newValue</li>
+        <li>url</li>
+        <li>storage object</li>
+    </ol>
+    <img src="assets/images/sm_chap15-4.jpg" alt="">
+
+    <h2>Local Storage</h2>
+    <ol>
+        <li>Hit Ctrl+Shift+I to open the Developer tools and see the data being set.</li>
+        <li>Open a new tab instance of this page by clicking this link: <a href="b-storageEvent1.html" target="_blank">Second tab instance</a></li>
+        <li>Add a value in this tab and see it reflected in the other</li>
+    </ol>
+    <fieldset>
+        <label for="txtKey">Key: </label><input type="text" name="txtKey" id="txtKey" placeholder="Enter a key" value="firstName"><br>
+        <label for="txtVal">Value: </label><input type="text" name="txtVal" id="txtVal" placeholder="Enter a value" value="James"><br><br>
+        <button id="btnSetLocal">set localStorage</button>
+        <button id="btnGetLocal">get localStorage</button>
+        <button id="btnClearLocal">clear localStorage</button>
+    </fieldset>
+    <hr>
+    <h2>Result</h2>
+    <div id="output"></div>
+    
+    <script src="b-storageEvent1.js" id="js1"></script>
+</body>
+</html>

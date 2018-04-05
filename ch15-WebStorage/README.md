@@ -537,3 +537,89 @@ For PWAs, you can cache static resources, composing your application shell (JS/C
     - [ ] Transactions
     - [ ] Asynchronous read/write
     - [x] Simple key/value pair storage
+
+# Lesson 2
+## 15. Handling storage events
+One of the biggest challenges you'll face when working with web storage is keeping everything in sync when a user has multiple tabs or browser instances open at the same time.
+
+For example, browser tab one might have displayed a value it retrieved from `localStorage` just before that entry was updated in browser tab two. In this scenario, tab one doesn't know the value it displayed has just become stale.
+
+To solve this problem, web storage has a storage event that is raised whenever an entry is added, updated, or removed. You can subscribe to this event within you application to provide notification when something has changed and inform you of specific details about those changes. These events work in both `localStorage` and `sessionStorage`.
+
+> ### After this lesson, you'll be able to
+> - Understand the StorageEvent object.
+> - Implement event handling on the `localStorage` object.
+
+## 16. Sending notifications only to other windows
+The W3C recommends that events not be received in the tab (or window) that made the change when working with storage events. This makes sense because the intent is to allow other windows to respond when a storage value changes.
+
+However, some browsers (such as earlier versions of Internet Explorer) have implemented storage events in a way that allows the source window to receive the notification, too. It is only safe to rely on this implementation if your application will target those browsers specifically.
+
+## 17. StorageEvent object reference
+Subscribers to the storage event receive a StorageEvent object containing detailed information about what has changed. The following is a list of properties included on the StorageEvent object.
+
+- **key** Gets the key of the record that was added, updated, or removed; will be a `null` or empty if the event was triggered by the `clear()` method
+- **oldValue** Gets the initial value if the entry was updated or removed; will be a `null` or empty if a new item was added or the `clear()` method was invoked
+- **newValue** Gets the new value for new and updated entries; will be a `null` or empty if the event was triggered by either the `removeItem()` or `clear()` methods
+- **url** Gets the URL of the page on which the storage action was made
+- **storageArea** Gets a reference to either the window's `localStorage` or `sessionStorage` object, depending on which was changed
+
+Many browsers initially began supporting storage events without fully implementing the properties of the StorageEvent interface specification, so some older browsers might trigger storage events, but the properties outlined here might be `null` or empty.
+
+## 18. Bubbling & canceling events
+Unlike some other types of events, the storage event cannot be canceled from within a callback; it's simply a means for informing subscribers when a change occurs. It also does not bubble up like other events.
+
+## 19. Subscribing to events
+To begin listening for event notifications, add an event handler to the storage event as a follows.
+
+```js
+function respondToChange(e) {
+    console.log(e.newValue);
+}
+window.addEventListener('storage', respondToChange, false);
+```
+
+To trigger this event, perform an operation like the following in a new tab within the same site.
+
+```js
+localStorage.setItem('name', 'James');
+```
+
+### Binding to storage events using jQuery
+An alternative method to using `addEventListener()` for your subscriptions  is to use the event binding features jQuery provides. You have to update your `responsToChange()` method because it will now return a different event that actually wraps the raw event you were working with in the previous example.
+
+```js
+function respondToChange(e) {
+    console.log(e.originalEvent.newValue);
+}
+
+$(window).on('storage'), respondToChange);
+```
+
+## 20. Using events with sessionStorage
+In the previous lesson, you learned that browser context dictates when data can be shared. Because the context for `localStorage` includes other tabs and windows, notifications are passed to each open instance. However, `sessionStorage` gains little benefit from events because its context includes the active tab only. Current browsers have included `<iframe>` elements within that context definition, so it is possible to pass notifications to and from them if necessary.
+
+## 21. Lesson summary
+
+- Other tabs and windows can subscribe to storage events to receive notifications when a change occurs to `localStorage`
+- The StorageEvent object passed to subscribers contains detailed information regarding what changes were made.
+- Because `sessionStorage` data is not shared beyond the current tab or windows, others will not receive notifications when a change occurs.
+- Storage events cannot be cnaceled and do not bubble up.
+
+## 22 Lesson review
+
+1. Which of the following is not a property of the StorageEvent object?
+    - [ ] oldValue
+    - [ ] key
+    - [x] changeType
+    - [ ] storageArea
+2. If you modify a value stored in `sessionStorage`, which of the following could receive notifications of the change (if subscribed)?
+    - [ ] Another tab opened to a page on the same domain
+    - [ ] A second browser window open to the same page
+    - [x] An iframe on the same page whose source is within the same domain
+    - [ ] The operating system that is hosting the browser
+3. Which of the following is the correct way to cancel a storage event?
+    - [ ] event.returnValue = false;
+    - [ ] event.preventDefault();
+    - [ ] event.stopPropagation();
+    - [x] Storage events cannot be canceled after they are triggered.
