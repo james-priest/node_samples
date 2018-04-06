@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>localStorage</title>
+    <link rel="stylesheet" href="cookie-style.css">    
+</head>
+<body>
+    <a href="a-cookie-index.html" class="nav"><-- Cookie sample index</a>
+    <h1>Web Storage</h1>
+    <p>Hit Ctrl+Shift+I to open the Developer tools and see the data being set.</p>
+    <img src="assets/images/sm_chap15-4.jpg" alt="">
+
+    <h2>Local Storage</h2>
+    <fieldset>
+        <button id="btnSetLocal">set localStorage</button>
+        <button id="btnGetLocal">get localStorage</button>
+        <button id="btnClearLocal">clear localStorage</button>
+    </fieldset>
+    <h2>Session Storage</h2>
+    <fieldset>
+        <button id="btnSetSession">set sessionStorage</button>
+        <button id="btnGetSession">get sessionStorage</button>
+        <button id="btnClearSession">clear sessionStorage</button>
+    </fieldset>
+    <hr>
+    <h2>Result</h2>
+    <div id="output"></div>
+    
+    <script src="b-localStorage1.js" id="js1"></script>
+    <script>
+        // fetch('b-localStorage1.js')
+        //     .then(response => response.text())
+        //     .then(text => document.getElementById('code1').innerHTML = text.replace(/</g, '&lt;').replace(/>/g, '&gt;'));       
+    </script>
+</body>
+</html>
