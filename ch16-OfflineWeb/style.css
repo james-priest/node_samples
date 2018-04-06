@@ -1,0 +1,22 @@
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    color: darkslategray;
+}
+pre {
+    background-color: linen;
+    border: 1px solid #ccc;
+    margin: 0 30px;
+    padding: 16px 24px;
+    display: inline-block;
+}
+code {
+    font-family: consolas;
+    font-size: .85em;
+    background-color: linen;
+}
+#output { margin-left: 30px;}
+.nav { 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: .85em;
+}

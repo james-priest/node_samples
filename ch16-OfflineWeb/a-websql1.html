@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web SQL</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <a href="a-index.html" class="nav"><-- Offline Web App code samples</a>
+    <h1>Web SQL</h1>
+    <p>Hit Ctrl+Shift+I to open the Developer tools and see the data being set.</p>
+    <img src="assets/images/sm_chap16-1.jpg" alt="dev tools">
+    <h2>Web SQL</h2>
+    <ul>
+        <li>This opens (or creates) a Web SQL database named `Library`.</li>
+        <li>Creates an `authors` table</li>
+        <li>Inserts a name record into the authors table</li>
+    </ul>
+    <fieldset>
+        1. <button id="btnCreateDb">Open/Create database</button><br>
+        2. <button id="btnAddTable">Add a table</button><br><br>
+
+        <label for="firstName">First name: </label><input type="text" name="firstName" id="firstName" placeholder="Enter a first name" value="James"><br>
+        <label for="lastName">Last name: </label><input type="text" name="lastName" id="lastName" placeholder="Enter a last name" value="Priest"><br>
+        3. <button id="btnInsertRecord">Insert record</button><br>
+    </fieldset>
+    <!-- <hr>
+    <h2>Result</h2>
+    <div id="output"></div> -->
+    
+    <script src="a-websql1.js" id="js1"></script>
+</body>
+</html>
