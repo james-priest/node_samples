@@ -26,6 +26,7 @@ function showPosition(position) {
         lng: position.coords.longitude
     };
 
+    console.log(coords);
     var options = {
         zoom: 13,
         center: coords,
